@@ -294,7 +294,9 @@ nav{
 .hero-logo-wrap img{
   width:280px;
   position:relative;z-index:1;
-  filter:drop-shadow(0 0 40px rgba(139,61,255,.4));
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 0 4px rgba(139,61,255,.35), 0 0 60px rgba(139,61,255,.3);
   animation:float 4s ease-in-out infinite;
 }
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -695,7 +697,7 @@ footer{
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="hero-tag">
-        <span></span> Sydney-Based Web Studio
+        <span></span> Regional NSW Web Studio
       </div>
       <h1 class="hero-headline">
         Simple, Affordable Websites That<br/>
@@ -908,14 +910,14 @@ footer{
           <div class="contact-icon">✉️</div>
           <div class="contact-email">
             <div style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:2px">Email Us</div>
-            <a href="mailto:bytera.studios@gmail.com">bytera.studios@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#14766d607166753a676061707d7b67547379757d783a777b79"><span class="__cf_email__" data-cfemail="83e1faf7e6f1e2adf0f7f6e7eaecf0c3e4eee2eaefade0ecee">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">📍</div>
           <div>
             <div style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:2px">Location</div>
-            <span style="font-weight:600">Sydney, Australia</span>
+            <span style="font-weight:600">Regional NSW, Australia</span>
           </div>
         </div>
         <div class="contact-detail">
@@ -927,25 +929,15 @@ footer{
         </div>
       </div>
       <div class="contact-form-wrap reveal">
-        <h3 style="font-family:'Exo 2',sans-serif;font-weight:700;font-size:1.25rem;margin-bottom:24px">Send Us a Message</h3>
-        <div id="contactForm">
-          <div class="form-group">
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" placeholder="Your name" />
+        <h3 style="font-family:'Exo 2',sans-serif;font-weight:700;font-size:1.25rem;margin-bottom:10px">Enquiries</h3>
+        <p style="color:var(--muted);font-size:.95rem;margin-bottom:28px">Ready to get started or have a question? Reach out directly and we'll get back to you promptly.</p>
+        <a href="mailto:bytera.studios@gmail.com" style="display:flex;align-items:center;gap:16px;background:rgba(58,224,240,.06);border:1.5px solid rgba(58,224,240,.25);border-radius:14px;padding:20px 24px;transition:var(--transition)" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='rgba(58,224,240,.25)'">
+          <div style="width:48px;height:48px;background:rgba(58,224,240,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">✉️</div>
+          <div>
+            <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Email Us</div>
+            <div style="font-family:'Exo 2',sans-serif;font-weight:700;font-size:1.05rem;color:var(--cyan)">bytera.studios@gmail.com</div>
           </div>
-          <div class="form-group">
-            <label for="femail">Email Address</label>
-            <input type="email" id="femail" placeholder="you@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="fmsg">Message</label>
-            <textarea id="fmsg" placeholder="Tell us about your project..."></textarea>
-          </div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm()">Send Message &rarr;</button>
-        </div>
-        <div class="form-success" id="formSuccess">
-          ✅ Message sent! We'll be in touch soon.
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -972,8 +964,8 @@ footer{
       <div>
         <div class="footer-col-title">Contact</div>
         <div class="footer-links">
-          <a href="mailto:bytera.studios@gmail.com">bytera.studios@gmail.com</a>
-          <span style="color:var(--muted);font-size:.9rem">Sydney, Australia</span>
+          <a href="/cdn-cgi/l/email-protection#e7859e93829586c9949392838e8894a7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="016378756473602f72757465686e7241666c60686d2f626e6c">[email&#160;protected]</span></a>
+          <span style="color:var(--muted);font-size:.9rem">Regional NSW, Australia</span>
         </div>
         <div style="margin-top:24px">
           <a href="#pricing" class="btn btn-primary" style="font-size:.82rem;padding:10px 22px">Get Started</a>
@@ -982,13 +974,13 @@ footer{
     </div>
     <div class="footer-bottom">
       <span>© 2025 Bytera Studios. All rights reserved.</span>
-      <span>Built with ❤️ in Sydney</span>
+      <span>Built with ❤️ in Regional NSW</span>
     </div>
   </div>
 </footer>
 
 <!-- ── SCRIPTS ────────────────────────────────────────────────── -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ─ Hamburger ─
 const ham = document.getElementById('hamburger');
 const menu = document.getElementById('mobileMenu');
@@ -1029,16 +1021,4 @@ function submitForm(){
   const name=document.getElementById('fname').value.trim();
   const email=document.getElementById('femail').value.trim();
   const msg=document.getElementById('fmsg').value.trim();
-  if(!name||!email||!msg){alert('Please fill in all fields.');return;}
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-}
-
-// ─ Nav shadow on scroll ─
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.background =
-    window.scrollY>40 ? 'rgba(6,13,31,.95)' : 'rgba(6,13,31,.7)';
-});
-</script>
-</body>
-</html>
+  if(!name||!email||!
